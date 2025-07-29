@@ -376,7 +376,7 @@ async function searchInterface() {
 			<h1 class="title"><Docker Hub</h1>
 			<p class="subtitle">Docker<br>Search Any Docker Image</p>
 			<div class="search-container">
-				<input type="text" id="search-input" placeholder="Enter your Search Here: nginx, mysql, redis...">
+				<input type="text" id="search-input" placeholder="Enter Your Search Here: nginx, mysql, redis...">
 				<button id="search-button" title="Go">
 					<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
 						<path d="M13 5l7 7-7 7M5 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -645,14 +645,14 @@ export default {
 
 /**
  * HTTP
- * @param {Request} req 请求对象
- * @param {string} pathname 请求路径
- * @param {string} baseHost 基地址
+ * @param {Request} req
+ * @param {string} pathname
+ * @param {string} baseHost
  */
 function httpHandler(req, pathname, baseHost) {
 	const reqHdrRaw = req.headers;
 
-	// 处理预检请求
+	//
 	if (req.method === 'OPTIONS' &&
 		reqHdrRaw.has('access-control-request-headers')
 	) {
@@ -721,7 +721,7 @@ async function proxy(urlObj, reqInit, rawLen) {
 }
 
 async function ADD(envadd) {
-	var addtext = envadd.replace(/[	 |"'\r\n]+/g, ',').replace(/,+/g, ',');	// 将空格、双引号、单引号和换行符替换为逗号
+	var addtext = envadd.replace(/[	 |"'\r\n]+/g, ',').replace(/,+/g, ',');	//
 	if (addtext.charAt(0) == ',') addtext = addtext.slice(1);
 	if (addtext.charAt(addtext.length - 1) == ',') addtext = addtext.slice(0, addtext.length - 1);
 	const add = addtext.split(',');
